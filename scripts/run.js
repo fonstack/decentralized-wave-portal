@@ -17,6 +17,9 @@ const main = async () => {
   let waveTxn = await waveContract.wave("A message!");
   await waveTxn.wait();
 
+  const waveTxn2 = await waveContract.wave("Another message");
+  await waveTxn2.wait();
+
   contractBalance = await hre.ethers.provider.getBalance(waveContract.address);
   console.log(
     "Contract balance:",
